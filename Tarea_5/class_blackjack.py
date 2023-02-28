@@ -73,7 +73,7 @@ class hand:
     def init(self):
         self.cards = []
         self.value = 0
-        self.ace = 0
+        self.aces = 0
 
     def add_card(self, card):
         self.cards.append(card)
