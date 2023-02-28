@@ -1,5 +1,5 @@
 # Clase Carta:
-class card:
+class Card:
     def init(self, suit, rank):
         self.suit = suit
         self.rank = rank
