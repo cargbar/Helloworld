@@ -1,3 +1,4 @@
 # Importar modulos
-import class_blackjack
-import funtions_game
+import Card
+import Deck
+import Hand
