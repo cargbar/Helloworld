@@ -22,27 +22,29 @@ def name_player():
     P.Player(option)
 
 #Funciones contador de las partidas ganas y perdidas  
-def wins_game():
+def wins_game(player_dict):
     wins=0
     wins +=1
+    player_dict.update({"wins": wins})
     A.agregar_wins(wins)
 
-def loses_game():
+def loses_game(player_dict):
     loses=0
     loses +=1
+    player_dict.update({"loses": loses})
     A.agregar_loses(loses)
 
 #Funciones relacionadas al estado del jugador
 def player_in_game():
     print("El jugador sigue en juego")
 
-def player_loses():
+def player_loses(player_dict):
     print("El jugador ha perdido")
-    loses_game()
+    loses_game(player_dict)
 
-def player_wins():
+def player_wins(player_dict):
     print("El jugador ha ganado")
-    wins_game()
+    wins_game(player_dict)
 
 #Funciones relacionadas al estado del juego
 def in_game():
