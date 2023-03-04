@@ -17,8 +17,8 @@ values = {
 
 
 # Clase hand
-class hand:
-    def init(self):
+class Hand:
+    def __init__(self):
         self.cards = []
         self.value = 0
         self.aces = 0
