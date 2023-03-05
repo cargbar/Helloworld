@@ -79,39 +79,20 @@ def show_stats():
     A.print_stats(all_players[chosen_player])
 
 #Funciones relacionadas a pedir mas o quedarse
-def hit_stand(players_hand, deck):
-    for hand in players_hand:
+def hit(hand, deck):
+    hand.add_card(deck.deal())
+def hit_stand(hand, deck):
+        global playing
+
         while True:
             opcion= input("\nDesea pedir más o se queda? Ingrese 'p' para pedir o 'q' para quedarse: \n" )
+            
             if opcion[0].lower()=='p':
-                hand.add_card(deck.deal())
+                hit(hand, deck)
             elif opcion[0].lower()=='q':
-                print('El jugador se queda, Dealer jugando')
+                print('\nEl jugador se queda, Dealer jugando')
                 playing=False
             else:
-                print('Error, seleccione una opcion valida')
+                print('\nError, seleccione una opcion valida')
                 continue
             break
-
-#Escenarios que definene quien gana o pierde
-def game_scenarios(name, players_hand, dealer_hand):
-        for hand in players_hand:
-            if hand.value> 21:
-                G.Game.player_loses(name, "Perdió")
-                break
-            if hand.value<= 21:
-                while dealer_hand.value< 17:
-                    dealer_hand.add_card(D.Deck.deal())
-                    #Muestra las manos
-                    H.Hand.show_hand(False)
-                    if dealer_hand.value> 21:
-                         print("El dealer ha perdido")
-                         G.Game.player_wins(name, "Ganó")
-                    elif dealer_hand.value > hand:
-                         print("El dealer ha ganado")
-                         G.Game.player_loses(name, "Perdió")
-                    elif dealer_hand < hand:
-                         print("El dealer ha perdido")
-                         G.Game.player_wins(name, "Ganó")
-                    else:
-                        print("Ha ocurrido un empate")
