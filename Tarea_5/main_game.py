@@ -30,16 +30,37 @@ def game():
                  F.in_game()
 
                  while playing:
-                     #pregunta si se quiere quedar o pedir mas
-                     F.hit_stand(juego.playerhands, juego.deck)
-                     #muestra las manos e indica el estado del juego y del jugador
-                     juego.print_players_hands()
-                     print()
-                     F.in_game()
-                     print()
-                     juego.player_in_game()
-                     F.game_scenarios(player,juego.playerhands, juego.deck)
-                     F.game_over()
+                     for hand in juego.playerhands:
+                        #pregunta si se quiere quedar o pedir mas
+                        F.hit_stand(hand, juego.deck)
+                        print()
+                        #muestra las manos e indica el estado del juego y del jugador
+                        juego.print_players_hands()
+                        print()
+                        F.in_game()
+                        print()
+                        juego.player_in_game()
+                        if hand.value >21:
+                            juego.player_loses(player, "Perdio")
+
+                            break
+                 if hand.value <=21:
+                    while juego.dealerhand.value <17:
+                        juego.dealerhand.add_card(juego.deck.deal())
+                        #muestra las manos
+                        H.Hand.show_hand(False)
+                        if juego.dealerhand.value >21:
+                            print("El dealer ha perdido")
+                            juego.player_wins(player, "Gano")
+                        elif juego.dealerhand.value > hand.value:
+                            print("El dealer ha ganado")
+                            juego.player_loses(player, "Perdio")
+                        elif juego.dealerhand.value < hand.value:
+                            print("El dealer ha perdido")
+                            juego.player_wins(player, "Gano")
+                        else:
+                            print("Ha ocurrido un empate")
+                 F.game_over()
         #muestra las estadisticas del usuario seleccionado
         elif opcion==3:
             F.show_stats()
