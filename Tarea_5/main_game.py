@@ -46,7 +46,7 @@ def game():
                             break
                  if hand.value <=21:
                     while juego.dealerhand.value <17:
-                        juego.dealerhand.add_card(juego.deck.deal())
+                        F.hit(juego.dealerhand, juego.deck)
                         #muestra las manos
                         H.Hand.show_hand(False)
                         if juego.dealerhand.value >21:

@@ -79,6 +79,8 @@ def show_stats():
     A.print_stats(all_players[chosen_player])
 
 #Funciones relacionadas a pedir mas o quedarse
+def hit(hand, deck):
+    hand.add_card(deck.deal())
 def hit_stand(hand, deck):
         global playing
 
@@ -86,7 +88,7 @@ def hit_stand(hand, deck):
             opcion= input("\nDesea pedir más o se queda? Ingrese 'p' para pedir o 'q' para quedarse: \n" )
             
             if opcion[0].lower()=='p':
-                hand.add_card(deck.deal())
+                hit(hand, deck)
             elif opcion[0].lower()=='q':
                 print('\nEl jugador se queda, Dealer jugando')
                 playing=False
