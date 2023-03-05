@@ -29,9 +29,9 @@ def game():
                  juego.print_players_hands()
                  print()
                  F.in_game()
-
+    
                  while playing:
-                     for hand in juego.playerhands:
+                       for hand in juego.playerhands: 
                         #pregunta si se quiere quedar o pedir mas
                         F.hit_stand(hand, juego.deck)
                         print()
