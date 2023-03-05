@@ -14,6 +14,7 @@ def game():
     while True:
         print("Bienvenidos al juego de blackjack 🃍 ")
         opcion= int(input("\tElija lo que desea hacer: \n\t\t1)Seleccion de usuarios\n\t\t2)Iniciar nueva partida\n\t\t3)Ver estadisticas\n\t\t4)Salir\n"))
+        
         #elije los usuarios
         if opcion==1:
             cantidad_players=int(input("\tIndique la cantidad de jugadores 1 o 2: "))
@@ -40,15 +41,18 @@ def game():
                         F.in_game()
                         print()
                         juego.player_in_game()
+                        #si la mano del jugador es mayor a 21, llama a funcion player_loses() y se sale del loop
                         if hand.value >21:
                             juego.player_loses(player, "Perdio")
 
                             break
+                 #Si el jugador no perdió, se juego con el Dealer
                  if hand.value <=21:
                     while juego.dealerhand.value <17:
                         F.hit(juego.dealerhand, juego.deck)
                         #muestra las manos
                         H.Hand.show_hand(False)
+                        #Escenarios de juego respecto al Dealer
                         if juego.dealerhand.value >21:
                             print("El dealer ha perdido")
                             juego.player_wins(player, "Gano")
@@ -61,9 +65,11 @@ def game():
                         else:
                             print("Ha ocurrido un empate")
                  F.game_over()
+        
         #muestra las estadisticas del usuario seleccionado
         elif opcion==3:
             F.show_stats()
+        
         #salir
         elif opcion==4:
             print("Gracias por jugar!🂡")
