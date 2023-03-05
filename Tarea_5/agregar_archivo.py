@@ -1,26 +1,36 @@
+'''
+Manejo de los archivos con los datos del usuario seleccionado
+'''
+from datetime import datetime
+
 #Agrega el usuario
-def agregar_player(name):
+def get_player():
     #abre el archvo
-    archivo=open("game_data.txt", "a")
-    archivo.write(f"El jugador {name}")
-    archivo.write(",")
+    archivo=open("players.txt", "r")
+    players_list=[]
+    for line in archivo:
+        players_list.append(line.rstrip('\n'))
+    #cierra el archivo
+    archivo.close()
+    return players_list
+
+#Agrega las estadisticas del usuario
+def add_player_stats(playername, result):
+    filename= playername.replace(' ','').lower()
+    #abre el archivo
+    archivo= open(f"{filename}-stats.txt", "a")
+    dt=datetime.now()
+    strdate= dt.strftime("%D, %B, %Y")
+    archivo.write(f"{strdate}: {playername} {result}\n")
     #cierra el archivo
     archivo.close()
 
-#Agrega las partidas ganadas
-def agregar_wins(wins):
-    #abre el archvo
-    archivo=open("game_data.txt", "a")
-    archivo.write(f"Ha ganado {wins} partidas")
-    archivo.write(",")
-    #cierra el archivo
-    archivo.close()
-
-#Agrega las partidas perdidas
-def agregar_loses(loses):
-    #abre el archvo
-    archivo=open("game_data.txt", "a")
-    archivo.write(f"Y ha perdido {loses} partidas")
-    archivo.write("\n")
+#Imprime estadisticas del usuario
+def print_stats(playername):
+    filename= playername.replace(' ','').lower()
+    #abre el archivo
+    archivo= open(f"{filename}-stats.txt", "r")
+    for x in archivo:
+        print(x)
     #cierra el archivo
     archivo.close()

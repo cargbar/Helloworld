@@ -1,3 +1,7 @@
+'''
+En la clase Deck se encuentran los valores de los palos y los rangos de las cartas. Esta clase crea el mazo del juego, mezclando y repartiendo las cartas entre los jugadores.
+'''
+
 # Importar modulos
 import random
 import Card as C

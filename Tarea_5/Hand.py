@@ -1,3 +1,6 @@
+'''
+Clase Hand, donde se encuentran los valores de las cartas. Tienen funciones utiles como añadir cartas a la mano de un jugador, y mostrarlas
+'''
 # Valores cartas
 values = {
     "Two": 2,
@@ -18,18 +21,24 @@ values = {
 
 # Clase hand
 class Hand:
-    def __init__(self):
+    def __init__(self, playername):
+        self.playername= playername
         self.cards = []
         self.value = 0
-        self.aces = 0
 
+    #Agrega cartas u la mano del jugador
     def add_card(self, card):
         self.cards.append(card)
         self.value += values[card.rank]
-        if card.rank == "Ace":
-            self.aces -= 1
 
-    def adjust_for_ace(self):
-        while self.value > 21 and self.aces:
-            self.value -= 10
-            self.aces -= 1
+    #Muestra la mano de los jugadores y del dealer
+    def show_hand(self, isdealer=False):
+        print(f"La mano del jugador {self.playername} es: ")
+        for i in range (0, len(self.cards)):
+            if isdealer and i==0:
+                print("⋆")
+            else:
+                print(self.cards[i])
+        show_value= "⋆" if isdealer else self.value
+        print(f"El valor de la mano es de: {show_value}")
+
