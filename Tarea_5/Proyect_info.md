@@ -70,15 +70,15 @@ Asimismo, se encuentran archivos de texto los cuales contienen los nombres de lo
 ## Manual de usuario
 
 El juego incia con un mensaje de bienvenida, seguido del menú donde el usuario puede eligir entre las opciones.
+<ol>
+<li>La <em>Opción 1</em> es sobre seleccionar el usuario. Se debe indicar la cantidad de jugadores, 1 o 2. Luego elige si agregar un nuevo jugador o seleccionar uno existente.</li> 
 
-La <em>Opción 1</em> es sobre seleccionar el usuario. Se debe indicar la cantidad de jugadores, 1 o 2. Luego elige si agregar un nuevo jugador o seleccionar uno existente. 
+<li>En la <em>Opción 2</em> se inicia una nueva partida donde el usuario debe elegir ,según la mano de cartas, si se queda o pide más cartas. Esto hasta que pierda o gane.</li>
 
-En la <em>Opción 2</em> se inicia una nueva partida donde el usuario debe elegir ,según la mano de cartas, si se queda o pide más cartas. Esto hasta que pierda o gane.
+<li>La <em>Opción 3</em> muestra las estadísticas de un jugador. El usuario debe seleccionar un jugador de los existentes para poder ver las estadísticas del mismo.</li>
 
-La <em>Opción 3</em> muestra las estadísticas de un jugador. El usuario debe seleccionar un jugador de los existentes para poder ver las estadísticas del mismo.
-
-Por último, la <em>Opción 4</em> es para salir del juego.
-
+<li>Por último, la <em>Opción 4</em> es para salir del juego.</li>
+</ol>
 
 ## Consideraciones especiales
 
