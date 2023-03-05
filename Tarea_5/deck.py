@@ -1,9 +1,9 @@
 # Importar modulos
 import random
-import Card as C
+import card as C
 
 # Variables de juego
-suits = ("\u2663", "\u2660", "\u2666", "\u2665")
+suits = ("\u2764", "\u2666", "\u2660", "\u2618")
 ranks = (
     "Two",
     "Three",
@@ -27,7 +27,7 @@ class Deck:
         self.deck = []
         for suit in suits:
             for rank in ranks:
-                self.deck.append(C.Card(suit,rank))
+                self.deck.append(C.Card(suit, rank))
 
     def __str__(self):
         deck_comp = ""
@@ -41,4 +41,3 @@ class Deck:
     def deal(self):
         single_card = self.deck.pop()
         return single_card
-
