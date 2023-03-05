@@ -50,7 +50,7 @@ Se crearon 4 clases, que son las siguientes:
 <li><em><strong>Hand</strong></em>, la clase contiene los valores de las cartas. Cuenta con dos funciones, una que se encarga de agregar cartas a la mano de los jugadores o del Dealer, llamada add_card(). La otra, encargada de mostrar la mano de los jugadores o del Dealer, de este ultimo muestra una carta escondida cuando se le indica, llamada show_hand().</li>
 <li><em><strong>Game</strong></em>, la ultima clase contiene la mayor parte de la logica del juego respecto a la creacion del mazo, repartir las cartas a la cantidad de jugadores ingresados. Esto lo logra invocando las funciones de las clases Deck y Hand. Tiene una función print_players_hands(), que imprime la mano de los jugador y del Dealer, llamando a la funcion show_hand(), de la clase Hand. Además, esta clase cuenta con funciones que indican el estado del jugador, si está en juego player_in_game(), si perdió player_loses() o si ganó player_wins().</li>
 </ul>
-Cada clase se encuentra en un archivo separado, llamado con el nombre de la respectiva clase: <em>Card.py</em>, <em>deck.py</em>, <em>Hand.py</em>, <em>Game.py</em>.<br>
+Cada clase se encuentra en un archivo separado, llamado con el nombre de la respectiva clase: <em>Card.py</em>, <em>deck.py</em>, <em>Hand.py</em>, <em>Game.py</em>.<br />
 
 Se creó un archivo llamado <em>agregar_archivo.py</em>, en donde se hace el manejo de los archivos para guardar los datos de los jugadores. Contiene la función get_player() la cual agrega el jugador a un archivo, en un formato de lista. La función add_player_stats(), agrega las estadisticas con la fecha, nombre y resultado a un archivo. Y por ultimo la función print_stats(), que imprime las lineas del archivo donde se encuentran las estadísticas.
 
