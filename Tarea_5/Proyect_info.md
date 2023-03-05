@@ -52,7 +52,7 @@ Se crearon 4 clases, que son las siguientes:
 </ul>
 Cada clase se encuentra en un archivo separado, llamado con el nombre de la respectiva clase: <em>Card.py</em>, <em>deck.py</em>, <em>Hand.py</em>, <em>Game.py</em>.
 
-Se creó un archivo llamado <em>agregar_archivo.py</em>, en donde se hace el manejo de los archivos para guardar los datos de los jugadores. Contiene la función get_player() la cual agrega el jugador a un archivo, en un formato de lista. La función add_player_stats(), agrega las estadisticas con la fecha, nombre y resultado a un archivo. Y por ultimo la función print_stats(), que imprime las lineas del archivo donde se encuentran las estadísticas.
+<p>Se creó un archivo llamado <em>agregar_archivo.py</em>, en donde se hace el manejo de los archivos para guardar los datos de los jugadores. Contiene la función get_player() la cual agrega el jugador a un archivo, en un formato de lista. La función add_player_stats(), agrega las estadisticas con la fecha, nombre y resultado a un archivo. Y por ultimo la función print_stats(), que imprime las lineas del archivo donde se encuentran las estadísticas.</p>
 
 Por otro lado, se realizó un archivo llamado <em>funtions_game.py</em>, el cual contiene varias de las funciones necesarias para que se lleve acabo el juego. 
 <ul>
