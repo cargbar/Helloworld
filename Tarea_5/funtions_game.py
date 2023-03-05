@@ -2,9 +2,10 @@
 En este archivo se encuentran distintas funciones que se necesitan a lo largo del juego
 '''
 import Hand as H
-import Deck as D
+import deck as D
 import Game as G
 import agregar_archivo as A
+
 
 # # Funciones para mostrar Cartas
 # def show_some(player,dealer):
@@ -59,9 +60,11 @@ def handle_player_select():
             print("Error, seleccione una opcion válida")
  
 
-#Funciones relacionadas al estado del juego
+
+# Funciones relacionadas al estado del juego
 def in_game():
     print("Sigue en juego 🂸...")
+
 
 def game_over():
     print("El juego ha acabado")

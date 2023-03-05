@@ -2,7 +2,7 @@
 La clase Game contiene la logica de crear el mazo, repartir las cartas a cada jugador, y mostrar las manos de cada jugador.
 Tambien contiene funciones que muestran el estado del jugador
 '''
-import Deck as D
+import deck as D
 import Hand as H
 import agregar_archivo as A
 

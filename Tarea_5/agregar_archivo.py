@@ -1,5 +1,5 @@
 '''
-Manejo de los archivos con los datos del usuario seleccionado
+Manejo de archivos. Los datos de los jugadores se guardan en archivos de texto
 '''
 from datetime import datetime
 
@@ -7,30 +7,27 @@ from datetime import datetime
 def get_player():
     #abre el archvo
     archivo=open("players.txt", "r")
-    players_list=[]
+    player_list= []
     for line in archivo:
-        players_list.append(line.rstrip('\n'))
+        player_list.append(line.rstrip('\n'))
     #cierra el archivo
     archivo.close()
-    return players_list
+    return player_list
 
-#Agrega las estadisticas del usuario
-def add_player_stats(playername, result):
-    filename= playername.replace(' ','').lower()
+#Agrega las estadisticas del usuario seleccionado
+def add_player_stats(playername,result):
+    filename= playername.replace(" ","").lower()
     #abre el archivo
-    archivo= open(f"{filename}-stats.txt", "a")
-    dt=datetime.now()
+    archivo=open(f"{filename}-stats.txt", "a")
+    dt= datetime.now()
     strdate= dt.strftime("%D, %B, %Y")
-    archivo.write(f"{strdate}: {playername} {result}\n")
+    archivo.write(f"{strdate}: {playername} {result} \n")
     #cierra el archivo
     archivo.close()
 
-#Imprime estadisticas del usuario
-def print_stats(playername):
-    filename= playername.replace(' ','').lower()
-    #abre el archivo
-    archivo= open(f"{filename}-stats.txt", "r")
+#Imprime los datos del archivo
+def print_stats(name):
+    archivo= open(f"{name}-stats.txt", "r")
     for x in archivo:
         print(x)
-    #cierra el archivo
     archivo.close()
