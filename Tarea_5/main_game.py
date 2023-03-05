@@ -1,6 +1,6 @@
 # Importar modulos
-import Card as C
-import Deck as D
+import card as C
+import deck as D
 import Hand as H
 import Player as P
 import funtions_game as F
