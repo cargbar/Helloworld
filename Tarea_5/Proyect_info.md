@@ -85,7 +85,8 @@ El juego incia con un mensaje de bienvenida, seguido del menú donde el usuario 
 Algunas consideraciones que hay que tomar en cuenta a la hora de correr la aplicación:
 
 <ul>
-<li>A la hora de que el usuario elija que la cantidad de jugadores es 2, se intentó que el juego reparta la mano a cada jugador. Sin embargo, el juego sólo reparte cartas al último jugador ingresado de esos dos.</li>
+<li>En el momento que el usuario elige que la cantidad de jugadores es 2, se intentó que el juego reparta la mano a cada jugador. Sin embargo, el juego sólo reparte cartas al último jugador ingresado de esos dos.</li>
+<li>Otro aspecto por mejorar es que cuando se ejecuta la función hit_stand() en el juego, solo permite elegir una vez. Esto quiere decir que, no le permite al usuario pedir cartas varias veces.</li>
 </ul>
 ---
 
