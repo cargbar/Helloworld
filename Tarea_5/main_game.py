@@ -8,6 +8,7 @@ import funtions_game as F
 import agregar_archivo as A
 
 
+
 def game():
     player=""
     cantidad_players=0 
@@ -29,50 +30,49 @@ def game():
                  juego.print_players_hands()
                  print()
                  F.in_game()
-                 
-                 playing = True
+                 print()
+                 juego.player_in_game()
+
+                 playing=True
         
                  while playing:
-                       
-                       for hand in juego.playerhands: 
+                    for hand in juego.playerhands:
                         #pregunta si se quiere quedar o pedir mas
-                        playing = F.hit_stand(hand, juego.deck)
+                        playing=F.hit_stand(hand, juego.deck)
+                        print()
                         #muestra las manos e indica el estado del juego y del jugador
                         juego.print_players_hands()
                         print()
-                        F.in_game()
-                        print()
-                        juego.player_in_game()
                         #si la mano del jugador es mayor a 21, llama a funcion player_loses() y se sale del loop
                         if hand.value >21:
                             juego.player_loses(player, "Perdio")
+                            print()
                             break
                  #Si el jugador no perdió, se juego con el Dealer
-                 if juego.dealerhand.value <=21:
+                 if hand.value <=21:
                     print(
                         "EL DEALER ESTA JUGANDO"
                     )
                     while juego.dealerhand.value <17:
                         F.hit(juego.dealerhand, juego.deck)
-                        #muestra las manos
-                        # H.Hand('TEST').show_hand(False)
-                        juego.dealerhand.show_hand(True)
-                        #Escenarios de juego respecto al Dealer
-                        if juego.dealerhand.value >21:
-                            print("El dealer ha perdido")
-                            juego.player_wins(player, "Gano")
-                        for hand in juego.playerhands: 
-                            if juego.dealerhand.value > hand.value or (juego.dealerhand.value + 1 > hand.value ):
-                                print("El dealer ha ganado")
-                                juego.player_loses(player, "Perdio")
-                        for hand in juego.playerhands:
-                            if juego.dealerhand.value < hand.value:
-                                print("El dealer ha perdido")
-                                juego.player_wins(player, "Gano")
-                        # for hand in juego.playerhands:
-                        #     if juego.dealerhand.value +1 > hand.value:
-                        #         print("El dealer ha ganado")
-                        #         juego.player_loses(player, "Perdio")
+                    #muestra las manos
+                    juego.dealerhand.show_hand(True)
+                    #Escenarios de juego respecto al Dealer
+                    if juego.dealerhand.value >21:
+                        print(f"\tEl dealer ha perdido")
+                        juego.player_wins(player, "Gano")
+                        print() 
+                    elif juego.dealerhand.value > hand.value:
+                        print(f"\tEl dealer ha ganado")
+                        juego.player_loses(player, "Perdio")
+                        print()
+                    elif juego.dealerhand.value < hand.value:
+                        print(f"\tEl dealer ha perdido")
+                        juego.player_wins(player, "Gano")
+                        print()
+                    else:
+                        print(f"\tEmpate")
+                        print()
                  F.game_over()
         
         #muestra las estadisticas del usuario seleccionado

@@ -43,10 +43,10 @@ class Game:
 
     def player_loses(self,playername, result):
         for hand in self.playerhands:
-            print("El jugador ha perdido")
+            print(f"\tEl jugador ha perdido")
         A.add_player_stats(playername,"Perdio")
 
     def player_wins(self, playername, result):
          for hand in self.playerhands:
-            print(f"El jugador ha ganado")
+            print(f"\tEl jugador ha ganado")
          A.add_player_stats(playername, "Gano")

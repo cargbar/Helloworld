@@ -33,12 +33,12 @@ class Hand:
 
     #Muestra la mano de los jugadores y del dealer
     def show_hand(self, isdealer=False):
-        print(f"La mano del jugador {self.playername} es: ")
+        print(f"\tLa mano del jugador {self.playername} es: ")
         for i in range (0, len(self.cards)):
             if isdealer and i==0:
                 print("⋆")
             else:
                 print(self.cards[i])
         show_value= "⋆" if isdealer else self.value
-        print(f"El valor de la mano es de: {show_value}")
+        print(f"\tEl valor de la mano es de: {show_value}")
 

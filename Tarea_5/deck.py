@@ -4,7 +4,7 @@ En la clase Deck se encuentran los valores de los palos y los rangos de las cart
 
 # Importar modulos
 import random
-import Card as C
+import card as C
 
 # Variables de juego
 suits = ("\u2764", "\u2666", "\u2660", "\u2618")
