@@ -56,7 +56,7 @@ def game():
                     while juego.dealerhand.value <17:
                         F.hit(juego.dealerhand, juego.deck)
                     #muestra las manos
-                    juego.dealerhand.show_hand(True)
+                    juego.dealerhand.show_hand(False)
                     #Escenarios de juego respecto al Dealer
                     if juego.dealerhand.value >21:
                         print(f"\tEl dealer ha perdido")
