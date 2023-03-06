@@ -88,16 +88,16 @@ def hit(hand, deck):
 
 def hit_stand(hand, deck):
         global playing
+
         while True:
-            opcion= input("\nDesea pedir más o se queda? Ingrese 'p' para pedir o 'q' para quedarse: \n" )
+            opcion= input("\t\nDesea pedir más o se queda? Ingrese 'p' para pedir o 'q' para quedarse: \n" )
             
             if opcion[0].lower()=='p':
                 hit(hand, deck)
             elif opcion[0].lower()=='q':
-                print('\nEl jugador se queda, Dealer jugando')
-                return False
+                print('\t\nEl jugador se queda, Dealer jugando')
+                playing=False
             else:
-                print('\nError, seleccione una opcion valida')
+                print('\t\nError, seleccione una opcion valida')
                 continue
             break
-        

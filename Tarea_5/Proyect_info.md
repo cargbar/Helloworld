@@ -82,13 +82,11 @@ El juego incia con un mensaje de bienvenida, seguido del menú donde el usuario 
 
 ## Consideraciones especiales
 
-Cualquier consideración o comentario adicional sobre la aplicación. Por ejemplo:
+Algunas consideraciones que hay que tomar en cuenta a la hora de correr la aplicación:
 
 <ul>
-<li>Como correr la aplicación</li>
-<li>Cosas que no se lograron realizar</li>
-<li>Siguientes pasos para mejorar la aplicación</li>
-<li>Etc.</li>
+<li>En el momento que el usuario elige que la cantidad de jugadores es 2, se intentó que el juego reparta la mano a cada jugador. Sin embargo, el juego sólo reparte cartas al último jugador ingresado de esos dos.</li>
+<li>Otro aspecto por mejorar es que cuando se ejecuta la función hit_stand() en el juego, solo permite elegir una vez. Esto quiere decir que, no le permite al usuario pedir cartas varias veces.</li>
 </ul>
 ---
 
