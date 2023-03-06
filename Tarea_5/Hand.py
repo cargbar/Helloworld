@@ -28,7 +28,7 @@ class Hand:
 
     #Agrega cartas u la mano del jugador
     def add_card(self, card):
-        self.cards.append(card)
+        self.cards.append(card.str())
         self.value += values[card.rank]
 
     #Muestra la mano de los jugadores y del dealer

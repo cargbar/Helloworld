@@ -25,12 +25,13 @@ def create_player():
     all_players= A.get_player()
     name= ""
     while True:
+        #pide al usuario el jugador
         name=input("\tIngrese el nombre del jugador: ")
         if name in all_players:
             print("\tEl jugador ya existe")
         else:
             break
-
+    #guarda el jugador en el archivo
     archivo= open("players.txt", "a")
     archivo.write(name + "\n")
     archivo.close()
@@ -46,10 +47,12 @@ def select_player():
         print("\tJugadores disponibles")
         for i in range(0, len(all_players)):
             print(f'{i+1}- {all_players[i]}')
+    #pide al usuario seleccionar un jugador de la lista
     selected_player= int(input("\tDigite el numero del jugador que desea seleccionar: ")) -1
     return all_players[selected_player]
 
 def handle_player_select():
+    #input para que el usuario escoja si desea agregar un jugador o seleccionar uno
     selectorcreate=int(input("\t\t1)Agregar un nuevo player\n\t\t2)Seleccionar un player existente\n"))
     while True:
         if selectorcreate==1:
@@ -81,9 +84,10 @@ def show_stats():
 #Funciones relacionadas a pedir mas o quedarse
 def hit(hand, deck):
     hand.add_card(deck.deal())
+
+
 def hit_stand(hand, deck):
         global playing
-
         while True:
             opcion= input("\nDesea pedir más o se queda? Ingrese 'p' para pedir o 'q' para quedarse: \n" )
             
@@ -91,8 +95,9 @@ def hit_stand(hand, deck):
                 hit(hand, deck)
             elif opcion[0].lower()=='q':
                 print('\nEl jugador se queda, Dealer jugando')
-                playing=False
+                return False
             else:
                 print('\nError, seleccione una opcion valida')
                 continue
             break
+        

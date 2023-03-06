@@ -43,5 +43,8 @@ class Deck:
         random.shuffle(self.deck)
 
     def deal(self):
+        # print('print deck:', self.deck)
+        # print('print deck: \n ',[card.str() for card in self.deck])
+        # print(len(self.deck))
         single_card = self.deck.pop()
         return single_card

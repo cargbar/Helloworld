@@ -23,6 +23,7 @@ class Game:
             player_hand= H.Hand(player)
             player_hand.add_card(deck.deal())
             player_hand.add_card(deck.deal())
+
             manos_players.append(player_hand)
         
         self.deck=deck
