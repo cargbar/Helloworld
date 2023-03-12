@@ -1,3 +1,5 @@
+### IMPORTANTE EJECUTAR CADA FUNCION UNA A UNA ###
+
 # Eliminar elementos repetidos de una lista
 def eliminar_elementos(lista_prueba, eliminar):
     for elementos in lista_prueba:
@@ -18,8 +20,8 @@ from pprint import pprint
 # Lista de prueba, ejecutar cada una.
 # lista_aa = ["perro", "perro", "momo", "mona", "gato", "mona"]
 # lista_aa = ["50", "30", "30", "60", "90", "60"]
-Lista_prueba = reduce(lambda l, x: l if x in l else l + [x], lista_aa, [])
-print(Lista_prueba)
+# Lista_prueba = reduce(lambda l, x: l if x in l else l + [x], lista_aa, [])
+# print(Lista_prueba)
 
 
 # Contar Caracteres de una strirngs
@@ -37,7 +39,6 @@ def contador_caracteres(text: str):
         print("Error:Not a string argument")
 
 
-# Textos de prueba, ejecutar cada uno.
 # test_texto = "aertyuoo"
 # test_texto = "PytjjehfihwighrhgrhhGHhhhhhhhh"
 # test_texto = ""
@@ -91,12 +92,13 @@ def contar_digitos_letras_caract(texto):
 # string_test = "+"
 # string_test = "8"
 test = string_test
-result = contar_digitos_letras_caract(test)
-print("Cantidad de números: %i" % result[0])
-print("Cantidad de letras: %i" % result[1])
-print("Cantidad de caracteres especiales: %i" % result[2])
+# result = contar_digitos_letras_caract(test)
+# print("Cantidad de números: %i" % result[0])
+# print("Cantidad de letras: %i" % result[1])
+# print("Cantidad de caracteres especiales: %i" % result[2])
 
 
+# Contador de Caracteres, Numeros y Caracteres especiales
 def contar_digitos_letras_caract(texto):
     numeros = len(list(filter(lambda x: x.isdigit(), texto)))
     letras = len(list(filter(lambda x: x.isalpha(), texto)))
